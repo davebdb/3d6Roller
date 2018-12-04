@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>
+3d6 roller
+</title>
+</head>
+<body>
+<style>
+
+	
+</style>
+
+<!-- need to make this into a form eventually-->
+
+	
+	
+<script>
+var diceRoll;	
+var rollNumber;
+var totalRoll;
+var counter;
+var d100;
+	
+for (counter=0;counter<7;counter++) {
+totalRoll=0;
+for (rollNumber=0;rollNumber<3;rollNumber++) {
+	diceRoll = Math.floor(Math.random()*6)+1;
+	document.write(diceRoll+"  ");
+	totalRoll +=diceRoll;
+}
+d100=Math.floor(Math.random()*100)+1;
+document.write("<br>"+totalRoll+"."+d100+"<br><br><br>");
+}
+</script>
+</body>
+</html>
