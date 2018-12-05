@@ -6,30 +6,45 @@
 </head>
 <body>
 <style>
-
+.attributes {
+	font-size: 40px;
+	}
+	
 	
 </style>
 
 <!-- need to make this into a form eventually-->
 
-	
+<span class= "attributes" id="str"></span><br>
+<span class= "attributes" id="int"></span><br>
+<span class= "attributes" id="wis"></span><br>
+<span class= "attributes" id="dex"></span><br>
+<span class= "attributes" id="con"></span><br>
+<span class= "attributes" id="lks"></span><br>
+<span class= "attributes" id="cha"></span><br>
 	
 <script>
+var attributesArray = ["str","int","wis","dex","con","lks","cha"];
+var attributesArrayLength = attributesArray.length;	
 var diceRoll;	
 var rollNumber;
 var totalRoll;
 var counter;
 var d100;
+var attribValue
 	
-for (counter=0;counter<7;counter++) {
+//for (counter=0;counter<7;counter++) {
+for (counter=0;counter<attributesArrayLength;counter++) {
 totalRoll=0;
 for (rollNumber=0;rollNumber<3;rollNumber++) {
 	diceRoll = Math.floor(Math.random()*6)+1;
-	document.write(diceRoll+"  ");
+	//document.write(diceRoll+"  ");
 	totalRoll +=diceRoll;
 }
-d100=Math.floor(Math.random()*100)+1;
-document.write("<br>"+totalRoll+"."+d100+"<br><br><br>");
+d100=Math.floor(Math.random()*100);
+attribValue=totalRoll + (d100 * 0.01)
+document.getElementById(attributesArray[counter]).textContent=attributesArray[counter] + ":" + attribValue.toFixed(2);
+//document.write("<br>"+attributesArray[counter]+":"+totalRoll+"."+d100+"<br><br><br>");
 }
 </script>
 </body>
